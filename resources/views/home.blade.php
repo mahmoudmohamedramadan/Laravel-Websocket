@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Home | Laravel WebSocket')
+@section('title', 'Laravel WebSocket | Ratchet')
 
 @section('content')
     <div class="container">
