@@ -40,8 +40,8 @@
                     @csrf
 
                     <div class="input-group">
-                        <input class="form-control" id="chat_message" placeholder="Type a message"
-                            data-parsley-maxlength="50" data-parsley-pattern="/^[a-zA-Z0-9\s]+$/" required>
+                        <input type="text" class="form-control" id="chat_message" placeholder="Type a message"
+                            data-parsley-maxlength="50" data-parsley-pattern="/^[a-zA-Z0-9\s]+$/" autocomplete="off" required>
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-primary">Send</button>
                         </div>
