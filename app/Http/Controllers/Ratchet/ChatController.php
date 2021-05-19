@@ -26,10 +26,21 @@ class ChatController extends Controller implements MessageComponentInterface
     public function onMessage(ConnectionInterface $from, $msg)
     {
         $data = json_decode($msg, true);
+        $data['dt'] = date('Y-m-d h:i:s');
 
         foreach ($this->clients as $client) {
             /* when this line executed onmessage JavaScript function wil triggere */
-            $client->send(json_encode($data));
+            if (!empty($data['msg'])) {
+
+                if ($from == $client) {
+                    $data['user'] = 'Me';
+                } else {
+                    $data['user'] = $data['from'];
+                }
+
+
+                $client->send(json_encode($data));
+            }
         }
     }
 
