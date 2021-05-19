@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $chats = ChatRoom::get(['user_id', 'message']);
+        $chats = ChatRoom::get(['user_id', 'message', 'created_at']);
 
         return view('home', compact('chats'));
     }
