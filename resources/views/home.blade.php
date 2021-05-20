@@ -63,25 +63,20 @@
             };
 
             ws.onmessage = function(e) {
-                console.log(e.data);
-
                 var data = JSON.parse(e.data);
 
-                var row_class = '';
-
-                var background_class = '';
+                var row_class = '', background_class = '';
 
                 if (data.user == 'Me') {
                     row_class = 'row justify-content-start';
                     background_class = 'text-dark alert-light';
                 } else {
-                    console.log('dsfff');
                     row_class = 'row justify-content-end';
                     background_class = 'alert-success';
                 }
 
                 var html_data =
-                    `<div class="${row_class}"><div class="col-sm-10"><div class="shadow-sm alert ${background_class}"><b>${data.from} - </b>${data.msg}<div class="text-right"><small><i>${data.dt}</i></small></div></div></div></div>`;
+                    `<div class="${row_class}"><div class="col-sm-10"><div class="shadow-sm alert ${background_class}"><b>${data.user} - </b>${data.msg}<div class="text-right"><small><i>${data.dt}</i></small></div></div></div></div>`;
 
                 $('#messages_area').append(html_data);
                 $('#messages_area').scrollTop($('#messages_area')[0].scrollHeight);
