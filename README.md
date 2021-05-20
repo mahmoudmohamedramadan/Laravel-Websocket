@@ -1,4 +1,22 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Laravel Websocket Project
+
+## Laravel Project Installation
+
+<p>if you are NOT install Laravel Installer as a global Composer dependenc run the NEXT command</p>
+<pre>composer create-project laravel/laravel Laravel-Websocket</pre>
+
+<p>if you want to install Laravel Installer as a global Composer dependency</p>
+<pre>composer global require laravel/installer</pre>
+
+<p>then run the NEXT command</p>
+<pre>laravel new Laravel-Websocket</pre>
+
+## Ratchet Websocket Installation
+
+<p>run the NEXT command inside your project's directory</p>
+<pre>composer require cboden/ratchet</pre>
+
+### Finally you can find my explanation for each function...enjoy 😉🤙
 
 <p align="center">
 <img src="https://github.com/mahmoudmohamedramadan/Laravel-Websocket/blob/master/Laravel%20Websocket.gif" alt="Laravel Websocket">
