@@ -26,18 +26,19 @@ class ChatController extends Controller implements MessageComponentInterface
     public function onMessage(ConnectionInterface $from, $msg)
     {
         $data = json_decode($msg, true);
-        $data['dt'] = date('Y-m-d h:i:s');
 
         foreach ($this->clients as $client) {
-            /* when this line executed onmessage JavaScript function wil triggere */
+            /* Every reload/refresh for the page this function will called and when the `$client->send()` called onmessage JavaScript function wil trigger.
+            check if msg not empty becuase if it not empty this means there is a real message coming, if this condition NOT exists will give us an error becuase $data['from'] will NOT sent yet, we send the message when we click the send button then this function will called then onmessage function will trigger */
+
             if (!empty($data['msg'])) {
+                $data['dt'] = date('Y-m-d h:i:s');
 
                 if ($from == $client) {
                     $data['user'] = 'Me';
                 } else {
                     $data['user'] = $data['from'];
                 }
-
 
                 $client->send(json_encode($data));
             }
